@@ -1,0 +1,26 @@
+HKCR
+{ 
+	NoRemove CLSID
+	{
+		ForceRemove {920B988E-D118-4179-9580-23B962CDEE20} = s 'DropT Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+
+			val NeverShowExt = s ''
+			DefaultIcon = s '%MODULE%,0'
+			ForceRemove Control
+			ForceRemove Insertable
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 106'
+			MiscStatus = s '0'
+			{
+			    '1' = s '%OLEMISC%'
+			}
+			TypeLib = s '{94ADF02F-8EA2-48C6-9DBA-A5F293678DD9}'
+			Version = s '1.0'
+		}
+	}
+}

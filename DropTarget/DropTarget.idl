@@ -1,0 +1,50 @@
+// DropTarget.idl : IDL source for DropTarget
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DropTarget.tlb) and marshalling code.
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(20AB34AA-2435-4C5D-8505-4E4409EA070C),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IDropT : IDispatch{
+	[propput, bindable, requestedit, id(DISPID_AUTOSIZE)]
+	HRESULT AutoSize([in]VARIANT_BOOL vbool);
+	[propget, bindable, requestedit, id(DISPID_AUTOSIZE)]
+	HRESULT AutoSize([out,retval]VARIANT_BOOL* pbool);
+};
+
+[
+	uuid(94ADF02F-8EA2-48C6-9DBA-A5F293678DD9),
+	version(1.0),
+]
+library DropTargetLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(F317A8D4-EF90-4B1F-9765-C85E0CE792D9)		
+	]
+	dispinterface _IDropTEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(920B988E-D118-4179-9580-23B962CDEE20),		
+		control
+	]
+	coclass DropT
+	{
+		[default] interface IDropT;
+		[default, source] dispinterface _IDropTEvents;
+	};
+};
+
