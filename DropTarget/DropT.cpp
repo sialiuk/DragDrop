@@ -80,7 +80,7 @@
 		if(global = dataObj.GetGlobalData(CF_HDROP))
 		{
 			UINT numDropFile = 0;
-			wchar_t buff[MAX_PATH];
+			wchar_t buff[MAX_PATH] = {0};
 			dropFile = static_cast<HDROP>(GlobalLock(global));
 			numDropFile = DragQueryFile(dropFile, 0xFFFFFFFF, buff, MAX_PATH);
 			for(UINT i = 0; i != numDropFile; ++i)

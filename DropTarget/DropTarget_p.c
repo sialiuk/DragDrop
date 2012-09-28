@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0595 */
-/* at Thu Sep 27 17:34:39 2012
+/* at Fri Sep 28 10:59:03 2012
  */
 /* Compiler settings for DropTarget.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 8.00.0595 
